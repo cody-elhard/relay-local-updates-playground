@@ -14,9 +14,7 @@ const FormTesting = () => {
 
     const [recordId, setRecordId] = useState('');
     const [_count, setCount] = useState(0);
-    function triggerDepChange() {
-        setCount(count => count + 1);
-    }
+    function triggerDepChange() { setCount(count => count + 1); }
 
     let record: any = {};
     if (recordId) {
@@ -42,7 +40,6 @@ const FormTesting = () => {
                                 if (recordId === '') {
                                     const randomId = _.uniqueId('equipment_');
                                     const newRecord = store.create(randomId, 'equipment');
-                                    console.log('new', newRecord);
 
                                     setRecordId(newRecord.getDataID().toString());
                                 } else {
